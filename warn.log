@@ -1,0 +1,3 @@
+{"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
+{"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
+{"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
