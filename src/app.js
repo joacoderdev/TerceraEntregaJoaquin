@@ -8,6 +8,7 @@ import { logger } from "./middlewares/logger.js";
 import apiProd from "./routes/product.router.js";
 import viewsRouter from "./routes/views.rotuer.js";
 import {userRouter} from "./routes/user.routes.js";
+import mockingrouter from "./routes/mocking.routes.js";
 import sessionsRouter from "./routes/sessions.router.js";
 import initializeStrategy from "./config/passport.config.js";
 import * as dotenv from "dotenv"
@@ -29,6 +30,7 @@ app.use("/api/productos", apiProd);
 app.use("/api/carrito", apiCart);
 app.use("/api/sessions/", sessionsRouter);
 app.use("/api/users", userRouter);
+app.use("/api/mockingproducts", mockingrouter)
 app.listen(PORT, () => { console.log(`Corriendo el servidor en el puerto${PORT}`) });
 const environment = () => {
     mongoose.set('strictQuery', false);

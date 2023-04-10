@@ -41,5 +41,7 @@ export const generateUser = ()=>{
 // console.log(generateUser());
 
 //console.log(generateProduct());
+
+//generar productos mocking
 export default __dirname;
 

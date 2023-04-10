@@ -1,3 +1,6 @@
 {"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
 {"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
 {"level":"warn","message":"Error en User.getBy MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms"}
+{"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
+{"level":"warn","message":"Ocurrio un error al verificar el token. JsonWebTokenError: jwt must be provided"}
+{"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
