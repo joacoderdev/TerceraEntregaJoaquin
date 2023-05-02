@@ -1,0 +1,113 @@
+paths:
+  /api/productos/:
+    get:
+      summary: "Obtener todos los productos"
+      tags:
+        - Productos
+      responses:
+        "200":
+          description: Productos obtenidos correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/productos"
+        "500":
+          description: Hubo un error en el servidor, usualmente por un proceso defectuoso
+    post:
+      summary: "Crear un nuevo producto"
+      tags:
+        - Productos
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/productos"
+      responses:
+        "201":
+          description: Producto creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/productos"
+        "500":
+          description: Hubo un error en el servidor, usualmente por un proceso defectuoso
+  /api/productos/:id:
+    put:
+      summary: "Actualizar un producto"
+      tags:
+        - Productos
+      parameters:
+        - name: id
+          in: path
+          description: "ID del producto a actualizar"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/productos"
+      responses:
+        "200":
+          description: Producto actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/productos"
+        "500":
+          description: Hubo un error en el servidor, usualmente por un proceso defectuoso
+    delete:
+      summary: "Eliminar un producto"
+      tags:
+        - Productos
+      parameters:
+        - name: id
+          in: path
+          description: "ID del producto a eliminar"
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producto eliminado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/productos"
+        "500":
+          description: Hubo un error en el servidor, usualmente por un proceso defectuoso
+
+components:
+  schemas:
+    products:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: "ID único autogenerado por MongoDB"
+        description:
+          type: string
+          require: true
+          description: "Descripción del producto"
+        price:
+          type: number
+          require: true
+          description: "Precio del producto" 
+          thumbnails: ["https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"]       
+        stock:
+          type: number
+          require: true
+          description: "Stock del producto"
+      example:
+        _id: kajhd9127kajsh812asds23423
+        title: Producto 1
+        description: Descripción del producto 1
+        price: 1000
+        code: 12341qwasdaweq
+        category: Categoría 1
+        stock: 10
+

@@ -12,7 +12,12 @@ import {userRouter} from "./routes/user.routes.js";
 import mockingrouter from "./routes/mocking.routes.js";
 import sessionsRouter from "./routes/sessions.router.js";
 import initializeStrategy from "./config/passport.config.js";
+import swaggerUiExpress from 'swagger-ui-express'
 import * as dotenv from "dotenv"
+import { serve, setup } from "swagger-ui-express";
+// import specs from "./config/swagger.config.js";
+import { swaggerSpecs } from "./config/swagger.config.js"
+import swaggerUi from "swagger-ui-express"
 dotenv.config();
 const app = express();
 const PORT = 8080;
@@ -28,8 +33,8 @@ app.use(express.static(`${__dirname}/public`));
 app.use(cookieParser());
 app.get('/', (req, res) =>{
     // console.log("Ruta solicitada")
-    req.logger.info('Ruta Solicitada')
-    res.send({message:"Prueba de Logger"})
+    // req.logger.info('Ruta Solicitada')
+    // res.send({message:"Prueba de Logger"})
 })
 app.get("/login",(req,res)=>{
     req.logger.warn("Advertencia, el usuario no existe")
@@ -55,6 +60,7 @@ app.use("/api/carrito", apiCart);
 app.use("/api/sessions/", sessionsRouter);
 app.use("/api/users", userRouter);
 app.use("/api/mockingproducts", mockingrouter)
+app.use("/api/docs",swaggerUi.serve,swaggerUi.setup(swaggerSpecs));
 app.listen(PORT, () => logger.info(colors.green(`Corriendo el servidor exitosamente en el puerto... ${PORT}`)))
 const environment = () => {
     mongoose.set('strictQuery', false);

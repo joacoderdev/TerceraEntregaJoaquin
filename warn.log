@@ -4,3 +4,8 @@
 {"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
 {"level":"warn","message":"Ocurrio un error al verificar el token. JsonWebTokenError: jwt must be provided"}
 {"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
+{"level":"warn","message":"error en getCart: CastError: Cast to string failed for value \"{}\" (type Object) at path \"usuario\" for model \"Carritos\""}
+{"level":"warn","message":"error en getCart: CastError: Cast to string failed for value \"{}\" (type Object) at path \"usuario\" for model \"Carritos\""}
+{"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
+{"level":"warn","message":"error en getCart: MongooseError: Operation `carritos.findOne()` buffering timed out after 10000ms"}
+{"level":"warn","message":"error en createCart: ValidationError: usuario: Path `usuario` is required."}

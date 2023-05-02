@@ -1,2 +1,3 @@
 {"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
 {"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
+{"level":"error","message":"error en getAll: MongooseError: Operation `productos.find()` buffering timed out after 10000ms"}
